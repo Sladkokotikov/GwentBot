@@ -19,7 +19,7 @@ def faction_w_smiles(faction):
         return '''👹''' + " Чудовища"
     if faction == "nilfgaard":
         return '''🌞''' + " Нильфгаард"
-    if faction == "skoiatael":
+    if faction == "scoiatael":
         return '''🐿''' + " Скоя'таэли"
     if faction == "syndicate":
         return '''💰''' + " Синдикат"
@@ -69,6 +69,3 @@ def get_golden(url):
         message += '\n'
         message += ', '.join(golden)
         return message
-        #print('{0} {1} {0}'.format(smiles()[ability],ability)) #ru[faction]
-        #print(*golden, sep=', ')
-        #return '{0} {1} {0}'.format(smiles()[ability], ability)+'\n'+', '.join(golden)
