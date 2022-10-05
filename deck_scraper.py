@@ -28,6 +28,10 @@ def faction_w_smiles(faction):
     return faction
 
 def get_golden(url):
+
+    with open("custom_log.txt", 'a') as log:
+        log.write(url + '\n')
+    
     with urlopen(url) as page:
         s = page.read().decode('utf-8').replace('&quot;', '"')
         nums = list(product('0123456789abcdef', repeat=4))
@@ -61,7 +65,7 @@ def get_golden(url):
         if stratagem not in ['Волшебная лампа', 'Тактическое преимущество']:
             golden.insert(0, stratagem)
         message = ""
-        message += faction_w_smiles(faction)
+        message += faction_w_smiles(faction) + ' - ' + ability
         message += '\n'
         message += ', '.join(golden)
         return message
