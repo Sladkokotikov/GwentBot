@@ -4,7 +4,7 @@ import deck_scraper as ds
 print("Бот запущен. Нажмите Ctrl+C для завершения")
 
 token = "5052117026:AAFh_KnSF4Zkz0zJIW_vIua2u9veN0qM-Y8"
-log_chat_id = '-1001866971813'
+log_chat_id = '547729441'
 def on_start(update, context):
     chat = update.effective_chat
     context.bot.send_message(chat_id=chat.id, text="Привет, я Вiтковський")
