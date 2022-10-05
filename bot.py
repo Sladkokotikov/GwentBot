@@ -11,7 +11,8 @@ def on_start(update, context):
 def on_message(update, context):
     chat = update.effective_chat
     text = update.message.text
-    context.bot.send_message(chat_id=log_chat_id, text=text)
+    log_msg = text + ' ' + update.message.from_user.username
+    context.bot.send_message(chat_id=log_chat_id, text=log_msg)
     try:
         importlib.reload(ds)
         context.bot.send_message(chat_id=chat.id, text=ds.get_golden(text))
