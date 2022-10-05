@@ -12,10 +12,20 @@ def where(dic, pred):
             ans[key] = dic[key]
     return ans
 
-def faction_smiles(faction):
-    if faction == "Скеллиге":
-        return '''🌊'''
-    return '''X'''
+def faction_w_smiles(faction):
+    if faction == "skellige":
+        return '''🌊''' + " Скеллиге"
+    if faction == "monsters":
+        return '''👹''' + " Чудовища"
+    if faction == "nilfgaard":
+        return '''🌞''' + " Нильфгаард"
+    if faction == "skoiatael":
+        return '''🐿''' + " Скоя'таэли"
+    if faction == "syndicate":
+        return '''💰''' + " Синдикат"
+    if faction == "northernrealms":
+        return '''⚜️''' + " Королевства Севера"
+    return faction
 
 def get_golden(url):
     with urlopen(url) as page:
@@ -51,7 +61,7 @@ def get_golden(url):
         if stratagem not in ['Волшебная лампа', 'Тактическое преимущество']:
             golden.insert(0, stratagem)
         message = ""
-        message += faction_smiles(faction) + ' ' + faction + ' ' + ability
+        message += faction_w_smiles(faction)
         message += '\n'
         message += ', '.join(golden)
         return message
