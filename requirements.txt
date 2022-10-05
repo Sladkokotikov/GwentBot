@@ -1,2 +1,4 @@
-telegram.ext
-importlib
+pyTelegramBotAPI
+telegram
+python-telegram-bot
+
