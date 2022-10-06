@@ -3,7 +3,7 @@ import importlib
 import deck_scraper as ds
 
 token = "5052117026:AAFh_KnSF4Zkz0zJIW_vIua2u9veN0qM-Y8"
-log_chat_id = '547729441'
+log_chat_id = '@sladkologi'
 
 def on_start(update, context):
     chat = update.effective_chat
@@ -13,7 +13,7 @@ def on_start(update, context):
 def on_message(update, context):
     chat = update.effective_chat
     text = update.message.text
-    log_msg = text + ' ' + update.message.from_user.username
+    log_msg = text + ' @' + update.message.from_user.username
     context.bot.send_message(chat_id=log_chat_id, text=log_msg)
     try:
         importlib.reload(ds)
