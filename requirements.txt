@@ -1,4 +1,6 @@
 pyTelegramBotAPI
 telegram
 python-telegram-bot
-
+Pillow
+requests
+telegram
