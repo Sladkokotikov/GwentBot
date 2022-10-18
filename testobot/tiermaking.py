@@ -173,7 +173,7 @@ class Snapshot:
                       stroke_width=2,
                       stroke_fill=(0, 0, 0))
         img = img.crop((0, 0, img_w, max_cursor_y + h + config.down_composer))
-        path = 'snapshots/' + self.author + '.png'
+        path = 'testobot/snapshots/' + self.author + '.png'
         img.save(path)
         return open(path, 'rb')
 
