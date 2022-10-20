@@ -1,2 +1,2 @@
-worker: python bot.py
-worker: python testobot/decker_bot.py
+deks: python bot.py
+snapshots: python testobot/decker_bot.py
