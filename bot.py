@@ -18,7 +18,8 @@ def on_message(update, context):
     context.bot.send_message(chat_id=log_chat_id, text=log_msg)
     try:
         context.bot.send_message(chat_id=chat.id, text=ds.get_golden(text), parse_mode="html")
-    except:
+    except Exception as e:
+        context.bot.send_message(chat_id=log_chat_id, text=str(e))
         context.bot.send_message(chat_id=chat.id, text='Wrong URL! Send a deck link!')
 updater = Updater(token, use_context=True)
 
