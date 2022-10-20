@@ -1,8 +1,8 @@
 from telegram.ext import Updater, MessageHandler, Filters
-import config
-import user
-from copypaster import command
-from localization import Localization
+from testobot import config
+from testobot  import user
+from testobot import copypaster.command
+from testobot import localization.Localization
 
 print("Бот с метаотчётами работает")
 
