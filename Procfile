@@ -1,1 +1,2 @@
-worker: python all.py
+worker: python bot.py
+snapshooter: python all.py
