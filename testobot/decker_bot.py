@@ -4,7 +4,7 @@ import user
 from copypaster import command
 from localization import Localization
 
-print("Бот запущен. Нажмите Ctrl+C для завершения")
+print("Бот с метаотчётами работает")
 
 localizations = Localization(['ru', 'en'])
 
