@@ -4,6 +4,8 @@ import deck_scraper as ds
 
 token = "5052117026:AAFh_KnSF4Zkz0zJIW_vIua2u9veN0qM-Y8"
 log_chat_id = '@sladkologi'
+print('бот с колодами работает')
+
 
 def on_start(update, context):
     chat = update.effective_chat
