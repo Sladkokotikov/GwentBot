@@ -1,5 +1,4 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import importlib
 import deck_scraper as ds
 
 token = "5052117026:AAFh_KnSF4Zkz0zJIW_vIua2u9veN0qM-Y8"
@@ -18,7 +17,6 @@ def on_message(update, context):
     log_msg = text + ' @' + update.message.from_user.username
     context.bot.send_message(chat_id=log_chat_id, text=log_msg)
     try:
-        importlib.reload(ds)
         context.bot.send_message(chat_id=chat.id, text=ds.get_golden(text), parse_mode="html")
     except:
         context.bot.send_message(chat_id=chat.id, text='Wrong URL! Send a deck link!')
