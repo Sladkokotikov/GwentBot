@@ -67,5 +67,5 @@ def get_golden(url):
         message = ""
         message += faction_w_smiles(faction) + ' - ' + ability
         message += '\n'
-        message += ', '.join(golden)
+        message += '<a href="{0}">{1}</a>'.format(deck.link, ', '.join(golden))
         return message
