@@ -1,6 +1,6 @@
 from PIL import Image, ImageFont, ImageDraw
-import decker_scraper as ds
-import config
+from testobot import decker_scraper as ds
+from testobot import config
 
 
 def get_size(font, text):
