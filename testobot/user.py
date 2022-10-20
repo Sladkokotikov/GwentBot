@@ -1,4 +1,4 @@
-import tiermaking
+from testobot import tiermaking
 
 
 class User:

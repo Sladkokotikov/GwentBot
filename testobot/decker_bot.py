@@ -1,10 +1,12 @@
 from telegram.ext import Updater, MessageHandler, Filters
 from testobot import config
-from testobot  import user
-from testobot import copypaster.command
-from testobot import localization.Localization
+from testobot import user
+from testobot import copypaster
+from testobot.copypaster import command
+from testobot import localization
+from testobot.localization import Localization
 
-print("Бот с метаотчётами работает")
+print("Бот запущен. Нажмите Ctrl+C для завершения")
 
 localizations = Localization(['ru', 'en'])
 
