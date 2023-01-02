@@ -1,4 +1,4 @@
-from testobot import tiermaking
+import tiermaking
 
 
 class User:
@@ -13,6 +13,11 @@ class User:
             'add_tier': self.add_tier,
             'add_deck': self.add_deck
         }
+
+    def get_golden(link):
+        return tiermaking.get_golden(link)
+
+        
 
     def make_snapshot(self, update, context):
         message = update.message.text
