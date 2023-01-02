@@ -1,6 +1,10 @@
 from PIL import Image, ImageFont, ImageDraw
-from testobot import decker_scraper as ds
-from testobot import config
+import decker_scraper as ds
+import config
+
+
+def get_golden(link):
+    return ds.get_deck(link).golden
 
 
 def get_size(font, text):

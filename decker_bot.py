@@ -1,10 +1,11 @@
 from telegram.ext import Updater, MessageHandler, Filters
-from testobot import config
-from testobot import user
-from testobot import copypaster
-from testobot.copypaster import command
-from testobot import localization
-from testobot.localization import Localization
+import config
+import user
+import copypaster
+from copypaster import command
+import localization
+from localization import Localization
+
 
 print("Бот запущен. Нажмите Ctrl+C для завершения")
 
@@ -224,11 +225,25 @@ def lang_waiter(update, context):
 def on_message(update, context):
     username = update.message.from_user.username
     chat = update.effective_chat
+    
     if username not in users:
         users[username] = user.User(username, 'ru')
+
+    try:
+        deck = user.tiermaking.ds.get_deck(update.message.text)
+        deck_link = '<a href="{0}">{1}</a>'.format(deck.link, deck.golden)
+        result = '{0} {1} - {2}\n{3}'.format(deck.smile,
+                                                     deck.ru_faction,
+                                                     deck.ability,
+                                                     deck_link)
+        context.bot.send_message(chat_id=chat.id, text=result, parse_mode="html")
+        context.bot.send_message(chat_id=config.log_chat_id, text=f'@{username}: deck parse intention handled correctly')
+        return
+    except Exception as e:
+        print(e)
     result = users[username].process(update, context)
     for msg in result:
-        context.bot.send_message(chat_id=config.log_chat_id, text=f'@{username} intention handled correctly')
+        context.bot.send_message(chat_id=config.log_chat_id, text=f'@{username}: {msg} intention handled correctly')
         context.bot.send_message(chat_id=chat.id, text=text(username, msg))
 
 

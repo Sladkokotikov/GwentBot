@@ -172,5 +172,4 @@ def get_deck(url):
 
         result.golden = ', '.join(golden)
         return result
-
-deck = get_deck('https://www.playgwent.com/ru/decks/c92cc012d1bddbe8aa5d027d1ed3b3e8')
+    

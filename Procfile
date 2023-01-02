@@ -1,1 +1,1 @@
-worker: python bot.py
+worker: python decker_bot.py
