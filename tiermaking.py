@@ -93,7 +93,7 @@ class Snapshot:
     @property
     def to_image(self):
         img = Image.open(config.background_path)
-        logo = Image.open('logo.png') ##.convert('RGBA')
+        logo = Image.open('logo_trans.png') ##.convert('RGBA')
         logo = logo.resize((img.width//2, int(img.width//2 * logo.height/logo.width)))
         logo_trans = logo.copy()
         logo_trans.putalpha(128)
