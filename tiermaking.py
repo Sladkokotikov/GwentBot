@@ -97,7 +97,7 @@ class Snapshot:
         
         logo.putalpha(64)
         img_w, img_h = img.width, img.height
-        logo = logo.resize(img.width//2, int(img.width//2 * logo.height/logo.width))
+        logo = logo.resize((img.width//2, int(img.width//2 * logo.height/logo.width)))
         draw = ImageDraw.Draw(img)
         author_font = scale_font(self.author, config.default_author_font_size,
                                  (img_w - 2 * config.side_author, config.author_h))
