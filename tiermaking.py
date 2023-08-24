@@ -172,7 +172,7 @@ class Snapshot:
                 tier_count += 1
         h = 0
         if self.signed:
-            composer_name = 'Составил @' + self.occupant
+            composer_name = 't.me/gwentnews'
             composer_font = scale_font(composer_name, config.composer_default_font_size,
                                        (config.composer_w, config.composer_h))
             h = get_size(composer_font, composer_name)[1]
