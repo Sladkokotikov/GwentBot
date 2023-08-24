@@ -93,9 +93,11 @@ class Snapshot:
     @property
     def to_image(self):
         img = Image.open(config.background_path)
-        logo = Image.open('лого без деревяшки (2).png')
-        logo.putalpha(128)
+        logo = Image.open('logo.png', 'RGBA')
+        
+        logo.putalpha(64)
         img_w, img_h = img.width, img.height
+        logo = logo.resize(img.width//2, int(img.width//2 * logo.height/logo.width))
         draw = ImageDraw.Draw(img)
         author_font = scale_font(self.author, config.default_author_font_size,
                                  (img_w - 2 * config.side_author, config.author_h))
