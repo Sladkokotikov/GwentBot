@@ -95,7 +95,7 @@ class Snapshot:
         img = Image.open(config.background_path)
         logo = Image.open('logo.png') ##.convert('RGBA')
         logo_trans = logo.copy()
-        logo_trans.putalpha(64)
+        logo_trans.putalpha(128)
         img_w, img_h = img.width, img.height
         logo = logo.resize((img.width//2, int(img.width//2 * logo.height/logo.width)))
         draw = ImageDraw.Draw(img)
@@ -112,7 +112,7 @@ class Snapshot:
         count = self.decks_count
         columns = 2 if count > config.max_decks_in_column else 1
         if(columns == 2 or True):
-            img.paste(logo_trans, (img_w//2 - logo.width//2, 0), logo)
+            img.paste(logo_trans, (img_w//2 - logo.width//2, config.up_author + config.author_h + config.author_tier), logo)
         optimal = optimal_split(columns, [len(t.decks) for t in self.tiers.values()])
         print(optimal)
         tier_count = 0
